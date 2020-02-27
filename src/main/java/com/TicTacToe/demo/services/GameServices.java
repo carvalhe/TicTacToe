@@ -19,9 +19,23 @@ public class GameServices{
     }
 
     public int createGame(){
-        GameModel g = new GameModel();
-        GameModel savedGame = gameRepository.save(g);
+        //GameModel gm = GameModel.builder().game("---------").build();
+        GameModel gm = new GameModel();
+        gm.setBoard("---------");
+        GameModel savedGame = gameRepository.save(gm);
 
         return savedGame.getId();
     }
+
+    public GameModel placePiece(int gameId, String piece, int x, int y){
+        GameModel gm = gameRepository.getGameById(gameId);
+        int pos = y*3 + x;
+        String newBoard = gm.getBoard();
+        newBoard = newBoard.substring(0, pos) + piece + newBoard.substring(pos);
+        gm.setBoard(newBoard);
+        
+        gameRepository.save(gm);
+        return gm;
+    }
+
 }

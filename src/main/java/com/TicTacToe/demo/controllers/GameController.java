@@ -3,6 +3,7 @@ package com.TicTacToe.demo.controllers;
 //import com.TicTacToe.demo.Game;
 import com.TicTacToe.demo.model.GameModel;
 import com.TicTacToe.demo.services.GameServices;
+import com.TicTacToe.demo.payload.PlacePiecePayload;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,5 +32,8 @@ public class GameController{
         return gId;
     }
 
-
+    @PostMapping("/place")
+    public GameModel placePiece(@RequestBody PlacePiecePayload pl){
+        return gameService.placePiece(pl.id, pl.piece, pl.x, pl.y);
+    }
 }

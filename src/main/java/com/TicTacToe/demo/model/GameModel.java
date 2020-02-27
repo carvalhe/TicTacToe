@@ -25,4 +25,8 @@ public class GameModel{
         return board;
     }
 
+    public void setBoard(String s){
+        this.board = s;
+    }
+
 }
