@@ -1,6 +1,5 @@
 package com.TicTacToe.demo.controllers;
 
-//import com.TicTacToe.demo.Game;
 import com.TicTacToe.demo.model.GameModel;
 import com.TicTacToe.demo.services.GameServices;
 import com.TicTacToe.demo.payload.PlacePiecePayload;
@@ -34,6 +33,6 @@ public class GameController{
 
     @PostMapping("/place")
     public GameModel placePiece(@RequestBody PlacePiecePayload pl){
-        return gameService.placePiece(pl.id, pl.piece, pl.x, pl.y);
+        return gameService.placePiece(pl.id, pl.x, pl.y);
     }
 }

@@ -14,6 +14,9 @@ public class GameModel{
     @GeneratedValue // this automatically increments each time
     private int id;
 
+    public int countX = 0;
+    public int countO = 0;
+
     @Column
     private String board; // 9 letter string that can change values for x and o
 
@@ -29,4 +32,13 @@ public class GameModel{
         this.board = s;
     }
 
+    /*
+    public int getCountX(){
+        return countX;
+    }
+    public int getCountO(){
+        return countO;
+    }
+    */
+    
 }
