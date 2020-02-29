@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-// implemintation in the database
+// implemintation in the database for Game Object
 
 @Entity
 public class GameModel{

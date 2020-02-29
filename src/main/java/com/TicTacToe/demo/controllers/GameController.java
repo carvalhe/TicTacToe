@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/game")
 public class GameController{
     
+    // Scan through directory, looking for in this case gameServices. 
     @Autowired
     GameServices gameService;
 
